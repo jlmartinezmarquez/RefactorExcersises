@@ -1,0 +1,5 @@
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Raet.Recruitment.Refactoring.Shapes.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Raet.Recruitment.Refactoring.Shapes.pdb
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Refactoring.Shapes\obj\Debug\Raet.Recruitment.Refactoring.Shapes.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Refactoring.Shapes\obj\Debug\Raet.Recruitment.Refactoring.Shapes.pdb

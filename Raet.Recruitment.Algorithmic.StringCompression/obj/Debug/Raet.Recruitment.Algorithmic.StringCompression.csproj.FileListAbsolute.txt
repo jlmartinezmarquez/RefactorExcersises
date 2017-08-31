@@ -1,0 +1,6 @@
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\bin\Debug\Raet.Recruitment.Algorithmic.StringCompression.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\bin\Debug\Raet.Recruitment.Algorithmic.StringCompression.pdb
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\obj\Debug\Raet.Recruitment.Algorithmic.StringCompression.csprojResolveAssemblyReference.cache
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\obj\Debug\Raet.Recruitment.Algorithmic.StringCompression.dll
+C:\Users\Jose.Martinez\Downloads\Raet\Raet\Raet.Recruitment.Algorithmic.StringCompression\obj\Debug\Raet.Recruitment.Algorithmic.StringCompression.pdb
