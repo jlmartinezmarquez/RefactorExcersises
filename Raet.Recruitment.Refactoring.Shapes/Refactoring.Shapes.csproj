@@ -45,9 +45,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShapeTest.cs" />
     <Compile Include="Solution\Main.cs" />
+    <Compile Include="Solution\Patterns\OrderPrintedResultsDefault.cs" />
+    <Compile Include="Solution\Patterns\OrderPrintedResultsMoreSquaresThanCirclesAndTriangles.cs" />
+    <Compile Include="Solution\Patterns\OrderPrintedResultsMoreTrianglesThanCirclesAndSquares.cs" />
+    <Compile Include="Solution\Patterns\Strategy\IGetMeasuresStrategy.cs" />
+    <Compile Include="Solution\Patterns\Strategy\SquareGetMeasuresStrategy.cs" />
     <Compile Include="Solution\Shapes\IShape.cs" />
     <Compile Include="Solution\Shapes\Circle.cs" />
-    <Compile Include="Solution\Metrics\IMetrics.cs" />
+    <Compile Include="Solution\Shapes\Metrics.cs" />
     <Compile Include="Solution\Shapes\ShapeList.cs" />
     <Compile Include="Solution\Shapes\Triangle.cs" />
     <Compile Include="Solution\Shapes\Square.cs" />

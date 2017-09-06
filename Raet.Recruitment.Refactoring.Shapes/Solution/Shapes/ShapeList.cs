@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Refactoring.Shapes.Solution.Models;
 
-namespace Refactoring.Shapes.Solution.Models
+namespace Refactoring.Shapes.Solution.Shapes
 {
     public class ShapeList : IShapeList
     {
