@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility;
 using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
@@ -16,7 +15,7 @@ namespace Refactoring.Shapes.Solution
                 return ("Empty list of shapes!").Trim();
             }
 
-            var grouppedIShapesByConcreteShape = new ListOfGrouppedShapes(new List<IGrouppedShapes>());
+            var grouppedIShapesByConcreteShape = new EncapsulatedListOfGrouppedShapes(new List<GrouppedShapes>());
 
             foreach (IShape shape in shapes)
             {

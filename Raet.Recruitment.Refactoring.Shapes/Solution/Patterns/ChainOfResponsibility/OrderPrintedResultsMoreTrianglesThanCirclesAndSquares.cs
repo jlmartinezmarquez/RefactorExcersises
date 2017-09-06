@@ -1,5 +1,4 @@
-﻿using Refactoring.Shapes.Solution.Models;
-using Refactoring.Shapes.Solution.Shapes;
+﻿using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
@@ -11,11 +10,11 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             Succcessor = succcessor;
         }
 
-        public override string OrderPrintedResults(ListOfGrouppedShapes listOfGrouppedShapes)
+        public override string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
         {
-            var squareMetrics = listOfGrouppedShapes.GetShapeElement(new Square(0));
-            var grouppedCircles = listOfGrouppedShapes.GetShapeElement(new Circle());
-            var grouppedTriangles = listOfGrouppedShapes.GetShapeElement(new Triangle());
+            var squareMetrics = encapsulatedListOfGrouppedShapes.GetShapeElement(new Square(0));
+            var grouppedCircles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Circle(0));
+            var grouppedTriangles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Triangle(0));
 
             if (grouppedTriangles.NumberOf >= grouppedCircles.NumberOf && grouppedTriangles.NumberOf >= squareMetrics.NumberOf)
             {
@@ -30,7 +29,7 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             }
             else
             {
-                return Succcessor?.OrderPrintedResults(listOfGrouppedShapes);
+                return Succcessor?.OrderPrintedResults(encapsulatedListOfGrouppedShapes);
             }
         }
     }

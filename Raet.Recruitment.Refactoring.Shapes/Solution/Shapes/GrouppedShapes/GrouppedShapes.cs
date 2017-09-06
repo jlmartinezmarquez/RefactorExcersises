@@ -2,7 +2,7 @@
 
 namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 {
-    public class GrouppedShapes : IGrouppedShapes
+    public class GrouppedShapes
     {
         public int NumberOf { get; set; }
         public double AreaSquares { get; set; }

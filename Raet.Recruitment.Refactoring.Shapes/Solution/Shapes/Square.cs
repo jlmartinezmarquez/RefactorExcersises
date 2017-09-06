@@ -4,7 +4,7 @@
     {
         public string TextToPrint => "Squares: {0}, Area: {1}, Perimeter: {2}";
 
-        private double _width;
+        private readonly double _width;
 
         public Square(double width)
         {

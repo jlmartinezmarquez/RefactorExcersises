@@ -1,6 +1,4 @@
-﻿using Refactoring.Shapes.Solution.Shapes;
-using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
-using System.Collections.Generic;
+﻿using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 {
@@ -10,6 +8,6 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 
         public abstract void SetSuccessor(OrderPrintedResultsChainOfResponsibility succcessor);
 
-        public abstract string OrderPrintedResults(ListOfGrouppedShapes listOfGrouppedShapes);
+        public abstract string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes);
     }
 }

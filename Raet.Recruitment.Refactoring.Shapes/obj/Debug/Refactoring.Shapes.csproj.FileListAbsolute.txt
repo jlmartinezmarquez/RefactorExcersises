@@ -1,1 +1,6 @@
 C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\obj\Debug\Refactoring.Shapes.csprojResolveAssemblyReference.cache
+C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Refactoring.Shapes.dll
+C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Refactoring.Shapes.pdb
+C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\obj\Debug\Refactoring.Shapes.dll
+C:\Jose\RefactorExcersises\Raet.Recruitment.Refactoring.Shapes\obj\Debug\Refactoring.Shapes.pdb

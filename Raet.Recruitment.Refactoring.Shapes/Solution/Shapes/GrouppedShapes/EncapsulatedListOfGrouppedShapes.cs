@@ -4,28 +4,28 @@ using System.Linq;
 
 namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 {
-    public class ListOfGrouppedShapes
+    public class EncapsulatedListOfGrouppedShapes
     {
-        private readonly List<IGrouppedShapes> _instance;
+        private readonly List<GrouppedShapes> _instance;
 
-        public ListOfGrouppedShapes(List<IGrouppedShapes> instance)
+        public EncapsulatedListOfGrouppedShapes(List<GrouppedShapes> instance)
         {
             _instance = instance;
         }
 
-        private static Func<IGrouppedShapes, bool> ShapeInList(IShape shape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == shape.GetType();
+        private static Func<GrouppedShapes, bool> ShapeInList(IShape shape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == shape.GetType();
 
         public bool HasShapeIn(IShape shape)
         {
             return _instance.Any(ShapeInList(shape));
         }
 
-        public IGrouppedShapes GetShapeElement(IShape shape)
+        public GrouppedShapes GetShapeElement(IShape shape)
         {
             return _instance.FirstOrDefault(ShapeInList(shape));
         }
 
-        public void Add(IGrouppedShapes grouppedShapes)
+        public void Add(GrouppedShapes grouppedShapes)
         {
             _instance.Add(grouppedShapes);
         }
