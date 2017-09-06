@@ -48,6 +48,7 @@
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsDefault.cs" />
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsMoreSquaresThanCirclesAndTriangles.cs" />
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsMoreTrianglesThanCirclesAndSquares.cs" />
+    <Compile Include="Solution\Shapes\GrouppedShapes\ListOfGrouppedShapes.cs" />
     <Compile Include="Solution\Shapes\IShape.cs" />
     <Compile Include="Solution\Shapes\Circle.cs" />
     <Compile Include="Solution\Shapes\Metrics.cs" />

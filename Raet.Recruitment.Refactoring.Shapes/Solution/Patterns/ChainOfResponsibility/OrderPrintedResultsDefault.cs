@@ -1,4 +1,6 @@
-﻿using Refactoring.Shapes.Solution.Shapes;
+﻿using Refactoring.Shapes.Solution.Models;
+using Refactoring.Shapes.Solution.Shapes;
+using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 {
@@ -9,16 +11,18 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             Succcessor = succcessor;
         }
 
-        public override string OrderPrintedResults(Metrics squareMetrics, Metrics circleMetrics, Metrics triangleMetrics)
+        public override string OrderPrintedResults(ListOfGrouppedShapes listOfGrouppedShapes)
         {
-            if (triangleMetrics.NumberOf >= squareMetrics.NumberOf)
+            var squareMetrics = listOfGrouppedShapes.GetShapeElement(new Square(0));
+            var grouppedCircles = listOfGrouppedShapes.GetShapeElement(new Circle());
+            var grouppedTriangles = listOfGrouppedShapes.GetShapeElement(new Triangle());
+
+            if (grouppedTriangles.NumberOf >= squareMetrics.NumberOf)
             {
-                return circleMetrics.ShapeString + "\n" + triangleMetrics.ShapeString + "\n" + squareMetrics.ShapeString;
+                return grouppedCircles.TextToPrint + "\n" + grouppedTriangles.TextToPrint + "\n" + squareMetrics.TextToPrint;
             }
-            else
-            {
-                return circleMetrics.ShapeString + "\n" + squareMetrics.ShapeString + "\n" + triangleMetrics.ShapeString;
-            }
+
+            return grouppedCircles.TextToPrint + "\n" + squareMetrics.TextToPrint + "\n" + grouppedTriangles.TextToPrint;
         }
     }
 }

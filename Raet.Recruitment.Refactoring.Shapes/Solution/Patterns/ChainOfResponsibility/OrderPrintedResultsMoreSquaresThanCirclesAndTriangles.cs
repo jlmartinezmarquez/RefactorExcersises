@@ -1,4 +1,6 @@
-﻿using Refactoring.Shapes.Solution.Shapes;
+﻿using Refactoring.Shapes.Solution.Models;
+using Refactoring.Shapes.Solution.Shapes;
+using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 {
@@ -9,22 +11,26 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             Succcessor = succcessor;
         }
 
-        public override string OrderPrintedResults(Metrics squareMetrics, Metrics circleMetrics, Metrics triangleMetrics)
+        public override string OrderPrintedResults(ListOfGrouppedShapes listOfGrouppedShapes)
         {
-            if (squareMetrics.NumberOf >= circleMetrics.NumberOf && squareMetrics.NumberOf >= triangleMetrics.NumberOf)
+            var grouppedSquares = listOfGrouppedShapes.GetShapeElement(new Square(0));
+            var grouppedCircles = listOfGrouppedShapes.GetShapeElement(new Circle());
+            var grouppedTriangles = listOfGrouppedShapes.GetShapeElement(new Triangle());
+            
+            if (grouppedSquares.NumberOf >= grouppedCircles.NumberOf && grouppedSquares.NumberOf >= grouppedTriangles.NumberOf)
             {
-                if (circleMetrics.NumberOf >= triangleMetrics.NumberOf)
+                if (grouppedCircles.NumberOf >= grouppedTriangles.NumberOf)
                 {
-                    return squareMetrics.ShapeString + "\n" + circleMetrics.ShapeString + "\n" + triangleMetrics.ShapeString;
+                    return grouppedSquares.TextToPrint + "\n" + grouppedCircles.TextToPrint + "\n" + grouppedTriangles.TextToPrint;
                 }
                 else
                 {
-                    return squareMetrics.ShapeString + "\n" + triangleMetrics.ShapeString + "\n" + circleMetrics.ShapeString;
+                    return grouppedSquares.TextToPrint + "\n" + grouppedTriangles.TextToPrint + "\n" + grouppedCircles.TextToPrint;
                 }
             }
             else
             {
-                return Succcessor?.OrderPrintedResults(squareMetrics, circleMetrics, triangleMetrics);
+                return Succcessor?.OrderPrintedResults(listOfGrouppedShapes);
             }
         }
     }
