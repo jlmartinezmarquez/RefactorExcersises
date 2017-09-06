@@ -2,14 +2,28 @@
 {
     public class Square : IShape
     {
-        public double Width { get; }
-        public double Area { get; set; }
-        public double Perimeter { get; set; }
+        public string TextToPrint => "Squares: {0}, Area: {1}, Perimeter: {2}";
 
+        private double _width;
 
-        public void UpdateMeasures()
+        public Square(double width)
         {
-            Area = 
+            _width = width;
+        }
+
+        public double GetWidth()
+        {
+            return _width;
+        }
+
+        public double GetArea()
+        {
+            return _width * _width;
+        }
+
+        public double GetPerimeter()
+        {
+            return 4 * _width;
         }
     }
 }

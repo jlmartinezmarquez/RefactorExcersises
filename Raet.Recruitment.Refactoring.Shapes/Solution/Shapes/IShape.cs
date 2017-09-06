@@ -2,15 +2,12 @@
 {
     public interface IShape
     {
-        double Width { get; }
+        string TextToPrint { get; }
 
-        double Area { get; set; }
+        double GetWidth();
 
-        double Perimeter { get; set; }
+        double GetArea();
 
-
-        
-
-        void UpdateMeasures();
+        double GetPerimeter();
     }
 }

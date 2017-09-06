@@ -1,10 +1,10 @@
 ﻿using Refactoring.Shapes.Solution.Shapes;
 
-namespace Refactoring.Shapes.Solution.Patterns
+namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 {
-    public class OrderPrintedResultsMoreSquaresThanCirclesAndTriangles : OrderPrintedResultsChainOfResponsability
+    public class OrderPrintedResultsMoreSquaresThanCirclesAndTriangles : OrderPrintedResultsChainOfResponsibility
     {
-        public override void SetSuccessor(OrderPrintedResultsChainOfResponsability succcessor)
+        public override void SetSuccessor(OrderPrintedResultsChainOfResponsibility succcessor)
         {
             Succcessor = succcessor;
         }
