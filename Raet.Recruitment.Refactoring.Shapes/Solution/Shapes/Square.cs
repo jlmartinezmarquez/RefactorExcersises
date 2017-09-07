@@ -1,8 +1,10 @@
-﻿namespace Refactoring.Shapes.Solution.Shapes
+﻿using System;
+
+namespace Refactoring.Shapes.Solution.Shapes
 {
-    public class Square : IShape
+    public class Square : IBasicShape
     {
-        public string TextToPrint => "Squares: {0}, Area: {1}, Perimeter: {2}";
+        public string TextToPrint => "Squares: {0}, Area: {1}, Perimeter: {2}.";
 
         private readonly double _width;
 

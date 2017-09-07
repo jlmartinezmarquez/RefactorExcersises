@@ -1,6 +1,6 @@
 ﻿namespace Refactoring.Shapes.Solution.Shapes
 {
-    public interface IShape
+    public interface IBasicShape
     {
         string TextToPrint { get; }
 

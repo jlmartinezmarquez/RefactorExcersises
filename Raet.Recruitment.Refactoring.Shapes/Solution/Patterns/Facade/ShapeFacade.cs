@@ -4,11 +4,11 @@ using Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility;
 using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
-namespace Refactoring.Shapes.Solution
+namespace Refactoring.Shapes.Solution.Patterns.Facade
 {
-    public class Main
+    public static class ShapeFacade
     {
-        public String Print(List<Shape> shapes)
+        public static String Print(List<IBasicShape> shapes)
         {
             if (shapes.Count == 0)
             {
@@ -17,7 +17,7 @@ namespace Refactoring.Shapes.Solution
 
             var grouppedIShapesByConcreteShape = new EncapsulatedListOfGrouppedShapes(new List<GrouppedShapes>());
 
-            foreach (IShape shape in shapes)
+            foreach (IBasicShape shape in shapes)
             {
                 if (!grouppedIShapesByConcreteShape.HasShapeIn(shape)) grouppedIShapesByConcreteShape.Add(new GrouppedShapes(shape));
 
@@ -33,7 +33,7 @@ namespace Refactoring.Shapes.Solution
             firstCheckToOrderThePrintedResults.SetSuccessor(secondCheckToOrderThePrintedResults);
             secondCheckToOrderThePrintedResults.SetSuccessor(thirdCheckToOrderThePrintedResults);
 
-            return firstCheckToOrderThePrintedResults.OrderPrintedResults(grouppedIShapesByConcreteShape);
+            return firstCheckToOrderThePrintedResults.OrderPrintedResults(grouppedIShapesByConcreteShape).Trim();
         }
     }
 }

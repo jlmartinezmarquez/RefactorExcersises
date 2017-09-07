@@ -44,14 +44,14 @@
     <Compile Include="Shape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShapeTest.cs" />
-    <Compile Include="Solution\Main.cs" />
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsDefault.cs" />
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsMoreSquaresThanCirclesAndTriangles.cs" />
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsMoreTrianglesThanCirclesAndSquares.cs" />
+    <Compile Include="Solution\Patterns\Facade\ShapeFacade.cs" />
+    <Compile Include="Solution\RefactoredTests.cs" />
     <Compile Include="Solution\Shapes\GrouppedShapes\EncapsulatedListOfGrouppedShapes.cs" />
-    <Compile Include="Solution\Shapes\IShape.cs" />
+    <Compile Include="Solution\Shapes\IBasicShape.cs" />
     <Compile Include="Solution\Shapes\Circle.cs" />
-    <Compile Include="Solution\Shapes\Metrics.cs" />
     <Compile Include="Solution\Shapes\GrouppedShapes\GrouppedShapes.cs" />
     <Compile Include="Solution\Shapes\Triangle.cs" />
     <Compile Include="Solution\Shapes\Square.cs" />

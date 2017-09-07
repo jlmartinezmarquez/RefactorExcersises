@@ -13,21 +13,28 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
             _instance = instance;
         }
 
-        private static Func<GrouppedShapes, bool> ShapeInList(IShape shape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == shape.GetType();
+        private static Func<GrouppedShapes, bool> ShapeInList(IBasicShape basicShape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == basicShape.GetType();
 
-        public bool HasShapeIn(IShape shape)
+        public bool HasShapeIn(IBasicShape basicShape)
         {
-            return _instance.Any(ShapeInList(shape));
+            return _instance.Any(ShapeInList(basicShape));
         }
 
-        public GrouppedShapes GetShapeElement(IShape shape)
+        public GrouppedShapes GetShapeElement(IBasicShape basicShape)
         {
-            return _instance.FirstOrDefault(ShapeInList(shape));
+            return _instance.FirstOrDefault(ShapeInList(basicShape));
         }
 
         public void Add(GrouppedShapes grouppedShapes)
         {
             _instance.Add(grouppedShapes);
+        }
+
+        public int NumberOf(IBasicShape basicShape)
+        {
+            var element = GetShapeElement(basicShape);
+
+            return element?.NumberOf ?? 0;
         }
     }
 }

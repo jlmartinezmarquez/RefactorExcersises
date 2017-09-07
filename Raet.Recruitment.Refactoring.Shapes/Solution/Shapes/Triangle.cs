@@ -2,9 +2,9 @@
 
 namespace Refactoring.Shapes.Solution.Shapes
 {
-    public class Triangle : IShape
+    public class Triangle : IBasicShape
     {
-        public string TextToPrint => "Triangles: {0}, Area: {1}, Perimeter: {2}";
+        public string TextToPrint => "Triangles: {0}, Area: {1}, Perimeter: {2}.";
 
         private readonly double _width;
 

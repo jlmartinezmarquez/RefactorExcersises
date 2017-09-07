@@ -2,9 +2,9 @@
 
 namespace Refactoring.Shapes.Solution.Shapes
 {
-    public class Circle : IShape
+    public class Circle : IBasicShape
     {
-        public string TextToPrint => "Circles: {0}, Area: {1}, Perimeter: {2}";
+        public string TextToPrint => "Circles: {0}, Area: {1}, Perimeter: {2}.";
 
         private readonly double _width;
 
@@ -13,9 +13,9 @@ namespace Refactoring.Shapes.Solution.Shapes
             _width = width;
         }
 
-        public double GetWidth() => _width;        
+        public double GetWidth() => _width;
 
-        public double GetArea() => Math.PI * (_width / 2) * (_width / 2);        
+        public double GetArea() => Math.PI * (_width / 2) * (_width / 2);  
 
         public double GetPerimeter() => Math.PI * _width;
     }

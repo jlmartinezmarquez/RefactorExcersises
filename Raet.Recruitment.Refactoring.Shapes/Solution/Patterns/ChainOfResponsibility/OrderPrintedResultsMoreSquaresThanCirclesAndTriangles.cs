@@ -12,19 +12,19 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 
         public override string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
         {
-            var grouppedSquares = encapsulatedListOfGrouppedShapes.GetShapeElement(new Square(0));  //TODO: find a better way of doing this refactoring GetShapeElement
-            var grouppedCircles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Circle(0));
-            var grouppedTriangles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Triangle(0));
+            var numberOfSquares = encapsulatedListOfGrouppedShapes.NumberOf(new Square(0));  //TODO: find a better way of doing this refactoring GetShapeElement
+            var numberOfCircles = encapsulatedListOfGrouppedShapes.NumberOf(new Circle(0));
+            var numberOfTriangles = encapsulatedListOfGrouppedShapes.NumberOf(new Triangle(0));
             
-            if (grouppedSquares.NumberOf >= grouppedCircles.NumberOf && grouppedSquares.NumberOf >= grouppedTriangles.NumberOf)
+            if (numberOfSquares >= numberOfCircles && numberOfSquares >= numberOfTriangles)
             {
-                if (grouppedCircles.NumberOf >= grouppedTriangles.NumberOf)
+                if (numberOfCircles >= numberOfTriangles)
                 {
-                    return grouppedSquares.TextToPrint + "\n" + grouppedCircles.TextToPrint + "\n" + grouppedTriangles.TextToPrint;
+                    return grouppedSquares.TextToPrint + "\n" + grouppedCircles.TextToPrint + "\n" + numberOfTriangles.TextToPrint;
                 }
                 else
                 {
-                    return grouppedSquares.TextToPrint + "\n" + grouppedTriangles.TextToPrint + "\n" + grouppedCircles.TextToPrint;
+                    return grouppedSquares.TextToPrint + "\n" + numberOfTriangles.TextToPrint + "\n" + grouppedCircles.TextToPrint;
                 }
             }
             else

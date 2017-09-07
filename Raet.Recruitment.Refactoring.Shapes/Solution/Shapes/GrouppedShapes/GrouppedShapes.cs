@@ -8,13 +8,13 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
         public double AreaSquares { get; set; }
         public double PerimeterSquares { get; set; }
 
-        public string TextToPrint => string.Format(_shape.TextToPrint, NumberOf, AreaSquares, PerimeterSquares);
+        public string TextToPrint => string.Format(_basicShape.TextToPrint, NumberOf, AreaSquares.ToString("#.##"), PerimeterSquares.ToString("#.##"));
 
-        private readonly IShape _shape;
+        private readonly IBasicShape _basicShape;
 
-        public GrouppedShapes(IShape shape)
+        public GrouppedShapes(IBasicShape basicShape)
         {
-            _shape = shape;
+            _basicShape = basicShape;
 
             NumberOf = 0;
             AreaSquares = 0;
@@ -24,10 +24,10 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
         public void ComputeCalculations()
         {
             NumberOf++;
-            AreaSquares += _shape.GetArea();
-            PerimeterSquares += _shape.GetPerimeter();
+            AreaSquares += _basicShape.GetArea();
+            PerimeterSquares += _basicShape.GetPerimeter();
         }
 
-        public Type TypeOfTheGrouppedShapes => _shape.GetType();
+        public Type TypeOfTheGrouppedShapes => _basicShape.GetType();
     }
 }
