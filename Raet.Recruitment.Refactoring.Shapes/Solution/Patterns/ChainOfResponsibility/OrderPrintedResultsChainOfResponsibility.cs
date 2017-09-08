@@ -8,6 +8,6 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 
         public abstract void SetSuccessor(OrderPrintedResultsChainOfResponsibility succcessor);
 
-        public abstract string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes);
+        public abstract string OrderPrintedResults(IEncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes);
     }
 }

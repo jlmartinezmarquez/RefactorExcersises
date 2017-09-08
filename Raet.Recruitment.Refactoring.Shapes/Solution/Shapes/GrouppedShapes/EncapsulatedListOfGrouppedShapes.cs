@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 {
-    public class EncapsulatedListOfGrouppedShapes
+    public class EncapsulatedListOfGrouppedShapes : IEncapsulatedListOfGrouppedShapes
     {
         private readonly List<GrouppedShapes> _instance;
 
@@ -20,13 +20,13 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 
         public bool HasGrouppedShapesInList(IBasicShape basicShape) => _instance.Any(GrouppedShapesInList(basicShape));
         
-        public GrouppedShapes GetGrouppedShapesElement<T>() where T : IBasicShape => _instance.FirstOrDefault(GrouppedShapesInList<T>());
-        
         public GrouppedShapes GetGrouppedShapesElement(IBasicShape basicShape) => _instance.FirstOrDefault(GrouppedShapesInList(basicShape));        
 
         public int NumberOf<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.NumberOf ?? 0;
 
         public string TextToPrint<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.TextToPrint ?? string.Empty;
+
+        private GrouppedShapes GetGrouppedShapesElement<T>() where T : IBasicShape => _instance.FirstOrDefault(GrouppedShapesInList<T>());
 
         private static Func<GrouppedShapes, bool> GrouppedShapesInList(IBasicShape basicShape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == basicShape.GetType();        
 

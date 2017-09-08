@@ -10,7 +10,7 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             Succcessor = succcessor;
         }
 
-        public override string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
+        public override string OrderPrintedResults(IEncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
         {
             var numberOfSquares = encapsulatedListOfGrouppedShapes.NumberOf<Square>();
             var numberOfCircles = encapsulatedListOfGrouppedShapes.NumberOf<Circle>();

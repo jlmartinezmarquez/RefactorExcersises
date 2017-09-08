@@ -6,22 +6,27 @@ using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution
 {
-    public static class Main
+    public class Main
     {
-        public static String Print(List<IBasicShape> shapes)
+        private readonly IEncapsulatedListOfGrouppedShapes _encapsulatedListOfGrouppedShapes;
+
+        public Main(IEncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
+        {
+            _encapsulatedListOfGrouppedShapes = encapsulatedListOfGrouppedShapes;
+        }
+
+        public String Print(List<IBasicShape> shapes)
         {
             if (shapes.Count == 0)
             {
                 return ("Empty list of shapes!").Trim();
             }
 
-            var grouppedIShapesByConcreteShape = new EncapsulatedListOfGrouppedShapes(new List<GrouppedShapes>());
-
             foreach (IBasicShape shape in shapes)
             {
-                if (!grouppedIShapesByConcreteShape.HasGrouppedShapesInList(shape)) grouppedIShapesByConcreteShape.Add(new GrouppedShapes(shape.GetType()));
+                if (!_encapsulatedListOfGrouppedShapes.HasGrouppedShapesInList(shape)) _encapsulatedListOfGrouppedShapes.Add(new GrouppedShapes(shape.GetType()));
 
-                var currentGrouppedShapes = grouppedIShapesByConcreteShape.GetGrouppedShapesElement(shape);
+                var currentGrouppedShapes = _encapsulatedListOfGrouppedShapes.GetGrouppedShapesElement(shape);
 
                 currentGrouppedShapes.ComputeCalculations(shape);
             }
@@ -33,7 +38,7 @@ namespace Refactoring.Shapes.Solution
             firstCheckToOrderThePrintedResults.SetSuccessor(secondCheckToOrderThePrintedResults);
             secondCheckToOrderThePrintedResults.SetSuccessor(thirdCheckToOrderThePrintedResults);
 
-            return firstCheckToOrderThePrintedResults.OrderPrintedResults(grouppedIShapesByConcreteShape).Trim();
+            return firstCheckToOrderThePrintedResults.OrderPrintedResults(_encapsulatedListOfGrouppedShapes).Trim();
         }
     }
 }
