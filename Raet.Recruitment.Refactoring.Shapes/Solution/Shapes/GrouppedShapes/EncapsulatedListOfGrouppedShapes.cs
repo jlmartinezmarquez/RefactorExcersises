@@ -18,8 +18,6 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
             _instance.Add(grouppedShapes);
         }
 
-        public bool HasGrouppedShapesInList<T>() where T : IBasicShape => _instance.Any(GrouppedShapesInList<T>());        
-
         public bool HasGrouppedShapesInList(IBasicShape basicShape) => _instance.Any(GrouppedShapesInList(basicShape));
         
         public GrouppedShapes GetGrouppedShapesElement<T>() where T : IBasicShape => _instance.FirstOrDefault(GrouppedShapesInList<T>());
@@ -28,11 +26,7 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 
         public int NumberOf<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.NumberOf ?? 0;
 
-        public int NumberOf(IBasicShape basicShape) => GetGrouppedShapesElement(basicShape)?.NumberOf ?? 0;        
-
         public string TextToPrint<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.TextToPrint ?? string.Empty;
-
-        public string TextToPrint(IBasicShape basicShape) => GetGrouppedShapesElement(basicShape)?.TextToPrint ?? string.Empty;
 
         private static Func<GrouppedShapes, bool> GrouppedShapesInList(IBasicShape basicShape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == basicShape.GetType();        
 
