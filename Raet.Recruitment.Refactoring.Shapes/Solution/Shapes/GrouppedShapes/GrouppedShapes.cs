@@ -4,30 +4,33 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
 {
     public class GrouppedShapes
     {
+        public Type TypeOfTheGrouppedShapes { get; }
+
         public int NumberOf { get; set; }
-        public double AreaSquares { get; set; }
-        public double PerimeterSquares { get; set; }
+        public double Area { get; set; }
+        public double Perimeter { get; set; }
 
-        public string TextToPrint => string.Format(_basicShape.TextToPrint, NumberOf, AreaSquares.ToString("#.##"), PerimeterSquares.ToString("#.##"));
+        public string TextToPrint { get; set; }
 
-        private readonly IBasicShape _basicShape;
-
-        public GrouppedShapes(IBasicShape basicShape)
+        public GrouppedShapes(Type typeOfTheGrouppedShapes)
         {
-            _basicShape = basicShape;
-
             NumberOf = 0;
-            AreaSquares = 0;
-            PerimeterSquares = 0;
+            Area = 0;
+            Perimeter = 0;
+            TextToPrint = string.Empty;
+
+            TypeOfTheGrouppedShapes = typeOfTheGrouppedShapes;
         }
 
-        public void ComputeCalculations()
+        public void ComputeCalculations(IBasicShape basicShape)
         {
             NumberOf++;
-            AreaSquares += _basicShape.GetArea();
-            PerimeterSquares += _basicShape.GetPerimeter();
-        }
+            Area += basicShape.GetArea();
+            Perimeter += basicShape.GetPerimeter();
 
-        public Type TypeOfTheGrouppedShapes => _basicShape.GetType();
+            var textToPrint = TypeOfTheGrouppedShapes.GetProperty("TextToPrint");
+            var textToPrintValue = textToPrint?.GetValue(basicShape).ToString();
+            TextToPrint = string.Format(textToPrintValue, NumberOf, Area.ToString("#.##"), Perimeter.ToString("#.##"));
+        }
     }
 }

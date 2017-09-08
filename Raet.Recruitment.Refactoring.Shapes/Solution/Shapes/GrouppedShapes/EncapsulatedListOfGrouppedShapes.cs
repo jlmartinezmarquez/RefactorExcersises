@@ -18,24 +18,24 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
             _instance.Add(grouppedShapes);
         }
 
-        public bool HasShapeIn<T>() where T : IBasicShape => _instance.Any(ShapeInList<T>());        
+        public bool HasGrouppedShapesInList<T>() where T : IBasicShape => _instance.Any(GrouppedShapesInList<T>());        
 
-        public bool HasShapeIn(IBasicShape basicShape) => _instance.Any(ShapeInList(basicShape));
+        public bool HasGrouppedShapesInList(IBasicShape basicShape) => _instance.Any(GrouppedShapesInList(basicShape));
         
-        public GrouppedShapes GetShapeElement<T>() where T : IBasicShape => _instance.FirstOrDefault(ShapeInList<T>());
+        public GrouppedShapes GetGrouppedShapesElement<T>() where T : IBasicShape => _instance.FirstOrDefault(GrouppedShapesInList<T>());
         
-        public GrouppedShapes GetShapeElement(IBasicShape basicShape) => _instance.FirstOrDefault(ShapeInList(basicShape));        
+        public GrouppedShapes GetGrouppedShapesElement(IBasicShape basicShape) => _instance.FirstOrDefault(GrouppedShapesInList(basicShape));        
 
-        public int NumberOf<T>() where T : IBasicShape => GetShapeElement<T>()?.NumberOf ?? 0;
+        public int NumberOf<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.NumberOf ?? 0;
 
-        public int NumberOf(IBasicShape basicShape) => GetShapeElement(basicShape)?.NumberOf ?? 0;        
+        public int NumberOf(IBasicShape basicShape) => GetGrouppedShapesElement(basicShape)?.NumberOf ?? 0;        
 
-        public string TextToPrint<T>() where T : IBasicShape => GetShapeElement<T>()?.TextToPrint ?? string.Empty;
+        public string TextToPrint<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.TextToPrint ?? string.Empty;
 
-        public string TextToPrint(IBasicShape basicShape) => GetShapeElement(basicShape)?.TextToPrint ?? string.Empty;
+        public string TextToPrint(IBasicShape basicShape) => GetGrouppedShapesElement(basicShape)?.TextToPrint ?? string.Empty;
 
-        private static Func<GrouppedShapes, bool> ShapeInList(IBasicShape basicShape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == basicShape.GetType();        
+        private static Func<GrouppedShapes, bool> GrouppedShapesInList(IBasicShape basicShape) => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == basicShape.GetType();        
 
-        private static Func<GrouppedShapes, bool> ShapeInList<T>() where T : IBasicShape => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == typeof(T);       
+        private static Func<GrouppedShapes, bool> GrouppedShapesInList<T>() where T : IBasicShape => grouppedShapes => grouppedShapes.TypeOfTheGrouppedShapes == typeof(T);       
     }
 }

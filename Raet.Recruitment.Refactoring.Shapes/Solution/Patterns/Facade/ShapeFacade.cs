@@ -19,11 +19,11 @@ namespace Refactoring.Shapes.Solution.Patterns.Facade
 
             foreach (IBasicShape shape in shapes)
             {
-                if (!grouppedIShapesByConcreteShape.HasShapeIn(shape)) grouppedIShapesByConcreteShape.Add(new GrouppedShapes(shape));
+                if (!grouppedIShapesByConcreteShape.HasGrouppedShapesInList(shape)) grouppedIShapesByConcreteShape.Add(new GrouppedShapes(shape.GetType()));
 
-                var currentGrouppedShapes = grouppedIShapesByConcreteShape.GetShapeElement(shape);
+                var currentGrouppedShapes = grouppedIShapesByConcreteShape.GetGrouppedShapesElement(shape);
 
-                currentGrouppedShapes.ComputeCalculations();
+                currentGrouppedShapes.ComputeCalculations(shape);
             }
 
             var firstCheckToOrderThePrintedResults = new OrderPrintedResultsMoreSquaresThanCirclesAndTriangles();
