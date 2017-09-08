@@ -49,8 +49,8 @@
     <Compile Include="Solution\Patterns\ChainOfResponsibility\OrderPrintedResultsMoreTrianglesThanCirclesAndSquares.cs" />
     <Compile Include="Solution\Main.cs" />
     <Compile Include="Solution\RefactoredTests.cs" />
-    <Compile Include="Solution\Shapes\GrouppedShapes\EncapsulatedListOfGrouppedShapes.cs" />
-    <Compile Include="Solution\Shapes\GrouppedShapes\IEncapsulatedListOfGrouppedShapes.cs" />
+    <Compile Include="Solution\Patterns\Facade\FacadeListOfGrouppedShapes.cs" />
+    <Compile Include="Solution\Patterns\Facade\IFacadeListOfGrouppedShapes.cs" />
     <Compile Include="Solution\Shapes\IBasicShape.cs" />
     <Compile Include="Solution\Shapes\Circle.cs" />
     <Compile Include="Solution\Shapes\GrouppedShapes\GrouppedShapes.cs" />

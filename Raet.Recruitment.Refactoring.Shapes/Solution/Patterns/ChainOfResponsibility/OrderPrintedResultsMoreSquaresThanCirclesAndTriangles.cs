@@ -1,4 +1,5 @@
-﻿using Refactoring.Shapes.Solution.Shapes;
+﻿using Refactoring.Shapes.Solution.Patterns.Facade;
+using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
 namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
@@ -10,26 +11,26 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
             Succcessor = succcessor;
         }
 
-        public override string OrderPrintedResults(IEncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
+        public override string OrderPrintedResults(IFacadeListOfGrouppedShapes facadeListOfGrouppedShapes)
         {
-            var numberOfSquares = encapsulatedListOfGrouppedShapes.NumberOf<Square>();
-            var numberOfCircles = encapsulatedListOfGrouppedShapes.NumberOf<Circle>();
-            var numberOfTriangles = encapsulatedListOfGrouppedShapes.NumberOf<Triangle>();
+            var numberOfSquares = facadeListOfGrouppedShapes.NumberOf<Square>();
+            var numberOfCircles = facadeListOfGrouppedShapes.NumberOf<Circle>();
+            var numberOfTriangles = facadeListOfGrouppedShapes.NumberOf<Triangle>();
             
             if (numberOfSquares >= numberOfCircles && numberOfSquares >= numberOfTriangles)
             {
                 if (numberOfCircles >= numberOfTriangles)
                 {
-                    return encapsulatedListOfGrouppedShapes.TextToPrint<Square>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Circle>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Triangle>();
+                    return facadeListOfGrouppedShapes.TextToPrint<Square>() + "\n" + facadeListOfGrouppedShapes.TextToPrint<Circle>() + "\n" + facadeListOfGrouppedShapes.TextToPrint<Triangle>();
                 }
                 else
                 {
-                    return encapsulatedListOfGrouppedShapes.TextToPrint<Square>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Triangle>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Circle>();
+                    return facadeListOfGrouppedShapes.TextToPrint<Square>() + "\n" + facadeListOfGrouppedShapes.TextToPrint<Triangle>() + "\n" + facadeListOfGrouppedShapes.TextToPrint<Circle>();
                 }
             }
             else
             {
-                return Succcessor?.OrderPrintedResults(encapsulatedListOfGrouppedShapes);
+                return Succcessor?.OrderPrintedResults(facadeListOfGrouppedShapes);
             }
         }
     }

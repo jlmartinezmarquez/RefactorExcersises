@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Refactoring.Shapes.Solution.Shapes;
+using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
-namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
+namespace Refactoring.Shapes.Solution.Patterns.Facade
 {
-    public class EncapsulatedListOfGrouppedShapes : IEncapsulatedListOfGrouppedShapes
+    public class FacadeListOfGrouppedShapes : IFacadeListOfGrouppedShapes
     {
         private readonly List<GrouppedShapes> _instance;
 
-        public EncapsulatedListOfGrouppedShapes(List<GrouppedShapes> instance)
+        public FacadeListOfGrouppedShapes(List<GrouppedShapes> instance)
         {
             _instance = instance;
         }
@@ -25,6 +27,11 @@ namespace Refactoring.Shapes.Solution.Shapes.GrouppedShapes
         public int NumberOf<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.NumberOf ?? 0;
 
         public string TextToPrint<T>() where T : IBasicShape => GetGrouppedShapesElement<T>()?.TextToPrint ?? string.Empty;
+
+        public void ComputeCalculations(GrouppedShapes grouppedShapes, IBasicShape basicShape)
+        {
+            grouppedShapes.ComputeCalculations(basicShape);
+        }
 
         private GrouppedShapes GetGrouppedShapesElement<T>() where T : IBasicShape => _instance.FirstOrDefault(GrouppedShapesInList<T>());
 

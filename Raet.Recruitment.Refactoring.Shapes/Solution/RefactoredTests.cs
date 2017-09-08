@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Refactoring.Shapes.Solution.Patterns.Facade;
 using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
@@ -10,7 +11,7 @@ namespace Refactoring.Shapes.Solution
     {
         private List<IBasicShape> _shapes;
 
-        private IEncapsulatedListOfGrouppedShapes _grouppedIShapesByConcreteShape;
+        private IFacadeListOfGrouppedShapes _grouppedIShapesByConcreteShape;
 
         private Main _main;
 
@@ -18,7 +19,7 @@ namespace Refactoring.Shapes.Solution
         public void Initialize()
         {
             _shapes = new List<IBasicShape>();
-            _grouppedIShapesByConcreteShape = new EncapsulatedListOfGrouppedShapes(new List<GrouppedShapes>());
+            _grouppedIShapesByConcreteShape = new FacadeListOfGrouppedShapes(new List<GrouppedShapes>());
             _main = new Main(_grouppedIShapesByConcreteShape);
         }
 
