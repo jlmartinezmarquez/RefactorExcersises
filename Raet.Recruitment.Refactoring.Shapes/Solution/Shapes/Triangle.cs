@@ -12,7 +12,6 @@ namespace Refactoring.Shapes.Solution.Shapes
         {
             _width = width;
         }
-
         public double GetWidth() => _width;
 
         public double GetArea() => (Math.Sqrt(3) / 4) * _width * _width;

@@ -12,19 +12,19 @@ namespace Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility
 
         public override string OrderPrintedResults(EncapsulatedListOfGrouppedShapes encapsulatedListOfGrouppedShapes)
         {
-            var squareMetrics = encapsulatedListOfGrouppedShapes.GetShapeElement(new Square(0));
-            var grouppedCircles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Circle(0));
-            var grouppedTriangles = encapsulatedListOfGrouppedShapes.GetShapeElement(new Triangle(0));
+            var numberOfSquares = encapsulatedListOfGrouppedShapes.NumberOf<Square>();
+            var numberOfCircles = encapsulatedListOfGrouppedShapes.NumberOf<Circle>();
+            var numberOfTriangles = encapsulatedListOfGrouppedShapes.NumberOf<Triangle>();
 
-            if (grouppedTriangles.NumberOf >= grouppedCircles.NumberOf && grouppedTriangles.NumberOf >= squareMetrics.NumberOf)
+            if (numberOfTriangles >= numberOfCircles && numberOfTriangles >= numberOfSquares)
             {
-                if (grouppedCircles.NumberOf >= squareMetrics.NumberOf)
+                if (numberOfCircles >= numberOfSquares)
                 {
-                    return grouppedTriangles.TextToPrint + "\n" + grouppedCircles.TextToPrint + "\n" + squareMetrics.TextToPrint;
+                    return encapsulatedListOfGrouppedShapes.TextToPrint<Triangle>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Circle>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Square>();
                 }
                 else
                 {
-                    return grouppedTriangles.TextToPrint + "\n" + squareMetrics.TextToPrint + "\n" + grouppedCircles.TextToPrint;
+                    return encapsulatedListOfGrouppedShapes.TextToPrint<Triangle>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Square>() + "\n" + encapsulatedListOfGrouppedShapes.TextToPrint<Circle>();
                 }
             }
             else
