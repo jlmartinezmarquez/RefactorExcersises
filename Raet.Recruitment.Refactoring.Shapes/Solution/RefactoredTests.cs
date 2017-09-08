@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Refactoring.Shapes.Solution.Patterns.Facade;
 using Refactoring.Shapes.Solution.Shapes;
 
 namespace Refactoring.Shapes.Solution
@@ -19,14 +18,14 @@ namespace Refactoring.Shapes.Solution
         [TestMethod]
         public void givenEmptyList_whenPrint_thenReturnEmptyMessage()
         {
-            Assert.AreEqual("Empty list of shapes!", ShapeFacade.Print(_shapes));
+            Assert.AreEqual("Empty list of shapes!", Main.Print(_shapes));
         }
 
         [TestMethod]
         public void givenOneSquare_whenPrint_thenReturnShapePrint()
         {
             _shapes.Add(new Square(2));
-            Assert.AreEqual("Squares: 1, Area: 4, Perimeter: 8.", ShapeFacade.Print(_shapes));
+            Assert.AreEqual("Squares: 1, Area: 4, Perimeter: 8.", Main.Print(_shapes));
         }
 
         [TestMethod]
@@ -35,7 +34,7 @@ namespace Refactoring.Shapes.Solution
             _shapes.Add(new Triangle(3));
             _shapes.Add(new Square(1));
             _shapes.Add(new Circle(2));
-            Assert.AreEqual("Squares: 1, Area: 1, Perimeter: 4.\nCircles: 1, Area: 3.14, Perimeter: 6.28.\nTriangles: 1, Area: 3.9, Perimeter: 9.", ShapeFacade.Print(_shapes));
+            Assert.AreEqual("Squares: 1, Area: 1, Perimeter: 4.\nCircles: 1, Area: 3.14, Perimeter: 6.28.\nTriangles: 1, Area: 3.9, Perimeter: 9.", Main.Print(_shapes));
         }
 
         [TestMethod]
@@ -50,7 +49,7 @@ namespace Refactoring.Shapes.Solution
             _shapes.Add(new Circle(3));
             _shapes.Add(new Square(3));
             _shapes.Add(new Triangle(1));
-            Assert.AreEqual("Circles: 4, Area: 25.92, Perimeter: 34.56.\nTriangles: 3, Area: 32.04, Perimeter: 36.\nSquares: 2, Area: 10, Perimeter: 16.", ShapeFacade.Print(_shapes));
+            Assert.AreEqual("Circles: 4, Area: 25.92, Perimeter: 34.56.\nTriangles: 3, Area: 32.04, Perimeter: 36.\nSquares: 2, Area: 10, Perimeter: 16.", Main.Print(_shapes));
         }
     }
 }

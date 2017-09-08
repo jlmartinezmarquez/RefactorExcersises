@@ -4,9 +4,9 @@ using Refactoring.Shapes.Solution.Patterns.ChainOfResponsibility;
 using Refactoring.Shapes.Solution.Shapes;
 using Refactoring.Shapes.Solution.Shapes.GrouppedShapes;
 
-namespace Refactoring.Shapes.Solution.Patterns.Facade
+namespace Refactoring.Shapes.Solution
 {
-    public static class ShapeFacade
+    public static class Main
     {
         public static String Print(List<IBasicShape> shapes)
         {
